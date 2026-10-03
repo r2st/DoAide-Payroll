@@ -1,0 +1,43 @@
+x-api-env: &api-env
+  DATABASE_URL: postgresql+psycopg://payroll:payroll@postgres:5432/payroll
+  REDIS_URL: redis://redis:6379/0
+  JWT_SECRET: ${JWT_SECRET:-change-me-to-something-secure-in-production}
+  ENVIRONMENT: ${ENVIRONMENT:-development}
+  BACKEND_CORS_ORIGINS: http://localhost:5173,http://localhost:3000,http://localhost
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: payroll
+      POSTGRES_PASSWORD: payroll
+      POSTGRES_DB: payroll
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  api:
+    build: ./backend
+    environment:
+      <<: *api-env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+volumes:
+  postgres-data:
