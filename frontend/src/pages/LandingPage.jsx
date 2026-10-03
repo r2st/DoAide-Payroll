@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { copyToClipboard, fullUrl } from "../lib/share";
 
 const DOAIDE_PRODUCTS = [
   { name: "409A", url: "https://409a.doaide.com" },
@@ -317,6 +318,34 @@ function FaqSection() {
   );
 }
 
+function ReferralBanner() {
+  const [copied, setCopied] = useState(false);
+  const url = fullUrl("/?ref=invite");
+  const handleCopy = async () => {
+    const ok = await copyToClipboard(url);
+    if (ok) { setCopied(true); setTimeout(() => setCopied(false), 2000); }
+  };
+  return (
+    <section className="landing-referral">
+      <h2>Invite Your HR Team or Accountant</h2>
+      <p>Share DoAide Payroll with your team — manage all employee payroll in one place.</p>
+      <div className="landing-referral-actions">
+        <a
+          href={`https://wa.me/?text=${encodeURIComponent("Check out DoAide Payroll — free payroll software for Indian businesses: " + url)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn landing-btn-primary"
+        >
+          Share on WhatsApp
+        </a>
+        <button onClick={handleCopy} className="btn landing-copy-btn">
+          {copied ? "Link copied!" : "Copy invite link"}
+        </button>
+      </div>
+    </section>
+  );
+}
+
 export default function LandingPage() {
   usePageTitle("Indian Payroll Made Simple — DoAide Payroll");
   const [visible, setVisible] = useState(false);
@@ -452,6 +481,42 @@ export default function LandingPage() {
 
         <FaqSection />
 
+        <section className="landing-section" aria-labelledby="tools-heading">
+          <h2 id="tools-heading" className="landing-section-title">Free Payroll Tools</h2>
+          <p className="landing-section-subtitle">No sign-up required. Use instantly.</p>
+          <div className="landing-tool-cards">
+            <Link to="/calculator" className="landing-tool-card">
+              <div className="landing-tool-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="10" y2="10" /><line x1="14" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="10" y2="14" /><line x1="14" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="16" y2="18" />
+                </svg>
+              </div>
+              <strong>Salary Calculator</strong>
+              <span>CTC breakdown with PF, ESI, TDS</span>
+            </Link>
+            <Link to="/checker" className="landing-tool-card">
+              <div className="landing-tool-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <strong>PF/ESI Checker</strong>
+              <span>Check compliance requirements</span>
+            </Link>
+            <Link to="/templates" className="landing-tool-card">
+              <div className="landing-tool-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <strong>Payslip Templates</strong>
+              <span>6 professional formats</span>
+            </Link>
+          </div>
+        </section>
+
+        <ReferralBanner />
+
         <section className="landing-cta">
           <h2>Ready to Simplify Payroll?</h2>
           <p>Start running payroll today. Free forever for up to 10 employees. No credit card required.</p>
@@ -462,7 +527,14 @@ export default function LandingPage() {
       </main>
 
       <footer className="landing-footer">
-        <div className="landing-footer-nav">
+        <div className="landing-footer-nav" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="landing-footer-col">
+            <h4>Free Tools</h4>
+            <Link to="/calculator">Salary Calculator</Link>
+            <Link to="/checker">PF/ESI Checker</Link>
+            <Link to="/templates">Payslip Templates</Link>
+            <Link to="/embed">Embed Widget</Link>
+          </div>
           <div className="landing-footer-col">
             <h4>Product</h4>
             <Link to="/pricing">Pricing</Link>
@@ -471,7 +543,9 @@ export default function LandingPage() {
           </div>
           <div className="landing-footer-col">
             <h4>Resources</h4>
-            <a href="#how-heading" onClick={(e) => { e.preventDefault(); document.getElementById("how-heading")?.scrollIntoView({ behavior: "smooth" }); }}>How It Works</a>
+            <Link to="/blog">Blog</Link>
+            <Link to="/blog/salary-structure-india-ctc-explained">Salary Structure Guide</Link>
+            <Link to="/blog/pf-esi-compliance-guide-2026">PF/ESI Guide</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Company</h4>

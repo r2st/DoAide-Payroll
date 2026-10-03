@@ -16,6 +16,14 @@ import ReportsPage from "./pages/ReportsPage";
 import CompliancePage from "./pages/CompliancePage";
 import SettingsPage from "./pages/SettingsPage";
 import PricingPage from "./pages/PricingPage";
+import CalculatorPage from "./pages/CalculatorPage";
+import CheckerPage from "./pages/CheckerPage";
+import TemplatesPage from "./pages/TemplatesPage";
+import EmbedPage from "./pages/EmbedPage";
+import BlogLayout, { BlogIndex } from "./pages/BlogLayout";
+import SalaryStructureGuide from "./pages/blog/SalaryStructureGuide";
+import PfEsiComplianceGuide from "./pages/blog/PfEsiComplianceGuide";
+import PayslipFormatGuide from "./pages/blog/PayslipFormatGuide";
 
 function Home() {
   const { user, loading } = useAuth();
@@ -42,6 +50,16 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/calculator" element={<CalculatorPage />} />
+      <Route path="/checker" element={<CheckerPage />} />
+      <Route path="/templates" element={<TemplatesPage />} />
+      <Route path="/embed" element={<EmbedPage />} />
+      <Route path="/blog" element={<BlogLayout />}>
+        <Route index element={<BlogIndex />} />
+        <Route path="salary-structure-india-ctc-explained" element={<SalaryStructureGuide />} />
+        <Route path="pf-esi-compliance-guide-2026" element={<PfEsiComplianceGuide />} />
+        <Route path="payslip-format-india-what-to-include" element={<PayslipFormatGuide />} />
+      </Route>
       <Route path="/employees" element={<Protected><EmployeesPage /></Protected>} />
       <Route path="/employees/:id" element={<Protected><EmployeeDetailPage /></Protected>} />
       <Route path="/payroll" element={<Protected><PayrollPage /></Protected>} />

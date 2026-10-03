@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DoAide Payroll — Indian Payroll Made Simple</title>
-    <meta name="description" content="Automated payroll for Indian businesses. PF, ESI, TDS compliance built in. Generate payslips, manage leave, and stay compliant. Free to start." />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="description" content="Automated payroll for Indian businesses. Free salary calculator, PF/ESI/TDS compliance, payslip generation, leave management. Free for up to 10 employees." />
+    <meta name="keywords" content="payroll software India, salary calculator, CTC breakdown, PF calculator, ESI calculator, TDS calculation, payslip generator, Indian payroll, HR software, employee management, provident fund, ESI compliance, professional tax, payroll compliance India, free payroll software" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DoAide by Apprend Technologies" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://payroll.doaide.com/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="9ee1d420-1fac-41ff-ade6-7b1a1839d302"></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://payroll.doaide.com/" />
-    <meta property="og:title" content="DoAide Payroll — Indian Payroll Made Simple" />
-    <meta property="og:description" content="Automated payroll for Indian businesses. PF, ESI, TDS compliance built in. Generate payslips and stay compliant." />
+    <meta property="og:title" content="DoAide Payroll — Free Indian Payroll Software with PF, ESI, TDS" />
+    <meta property="og:description" content="Automated payroll for Indian businesses. Free salary calculator, PF/ESI compliance, payslip generation. Free for up to 10 employees." />
     <meta property="og:site_name" content="DoAide Payroll" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DoAide Payroll — Indian Payroll Made Simple" />
-    <meta name="twitter:description" content="Automated payroll for Indian businesses. PF, ESI, TDS compliance built in. Generate payslips and stay compliant." />
+    <meta name="twitter:title" content="DoAide Payroll — Free Indian Payroll Software with PF, ESI, TDS" />
+    <meta name="twitter:description" content="Automated payroll for Indian businesses. Free salary calculator, PF/ESI compliance, payslip generation. Free for up to 10 employees." />
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -28,17 +38,67 @@
       "name": "DoAide Payroll",
       "url": "https://payroll.doaide.com",
       "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Payroll & HR Software",
       "operatingSystem": "Web",
-      "description": "Automated Indian payroll with PF, ESI, TDS compliance, payslip generation, and leave management.",
+      "countriesSupported": "IN",
+      "inLanguage": "en",
+      "description": "Automated Indian payroll software with PF, ESI, TDS compliance, payslip generation, leave management, and employee management. Free for up to 10 employees.",
       "offers": [
-        { "@type": "Offer", "price": "0", "priceCurrency": "INR", "name": "Free" },
-        { "@type": "Offer", "price": "999", "priceCurrency": "INR", "name": "Starter" },
-        { "@type": "Offer", "price": "2499", "priceCurrency": "INR", "name": "Pro" }
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "INR", "description": "Up to 10 employees with full features" },
+        { "@type": "Offer", "name": "Starter", "price": "999", "priceCurrency": "INR", "billingIncrement": "P1M", "description": "Up to 100 employees" },
+        { "@type": "Offer", "name": "Pro", "price": "2499", "priceCurrency": "INR", "billingIncrement": "P1M", "description": "Unlimited employees" }
+      ],
+      "featureList": ["Salary computation", "PF/ESI/TDS compliance", "Payslip generation", "Leave management", "Attendance tracking", "Reports"],
+      "author": { "@type": "Organization", "name": "Apprend Technologies", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Salary Calculator",
+      "description": "Free online salary calculator for Indian employees. Calculate CTC breakdown with basic, HRA, PF, ESI, TDS, and net take-home pay.",
+      "url": "https://payroll.doaide.com/calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "author": { "@type": "Organization", "name": "Apprend Technologies", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PF & ESI Eligibility Checker",
+      "description": "Free PF and ESI eligibility checker. Enter employee count and wages to check compliance requirements for Indian businesses.",
+      "url": "https://payroll.doaide.com/checker",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "author": { "@type": "Organization", "name": "Apprend Technologies", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does DoAide Payroll handle PF and ESI?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PF at 12% on basic (capped at ₹15,000) and ESI (0.75% employee + 3.25% employer, for gross up to ₹21,000) are calculated automatically." } },
+        { "@type": "Question", "name": "How many employees can I manage for free?", "acceptedAnswer": { "@type": "Answer", "text": "The Free plan supports up to 10 employees with full payroll features including PF, ESI, and TDS calculation." } },
+        { "@type": "Question", "name": "Can I generate payslips?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Professional PDF payslips with complete earnings and deductions breakdown are generated automatically each pay run." } }
       ]
     }
     </script>
-      <script defer src="https://analytics.doaide.com/script.js" data-website-id="9ee1d420-1fac-41ff-ade6-7b1a1839d302"></script>
-</head>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DoAide Payroll",
+      "url": "https://payroll.doaide.com",
+      "potentialAction": { "@type": "SearchAction", "target": "https://payroll.doaide.com/blog?q={search_term_string}", "query-input": "required name=search_term_string" }
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
