@@ -34,7 +34,8 @@ function renderApp(route = "/") {
 describe("App", () => {
   it("renders landing page when not authenticated", async () => {
     renderApp("/");
-    expect(await screen.findByText(/Indian Payroll/i)).toBeInTheDocument();
+    const matches = await screen.findAllByText(/Indian Payroll/i);
+    expect(matches.length).toBeGreaterThan(0);
   });
 
   it("renders auth page at /auth", async () => {
