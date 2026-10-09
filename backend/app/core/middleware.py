@@ -47,7 +47,13 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
         response.headers.setdefault(
             "Content-Security-Policy",
-            "default-src 'self'; frame-ancestors 'none'",
+            "default-src 'self'; "
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "font-src 'self' https://fonts.gstatic.com; "
+            "script-src 'self' 'unsafe-inline' https://analytics.doaide.com; "
+            "connect-src 'self' https://analytics.doaide.com; "
+            "img-src 'self' data:; "
+            "frame-ancestors 'none'",
         )
         return response
 
