@@ -2,8 +2,11 @@ import { Link, useLocation } from "react-router-dom";
 
 const TOOLS = [
   { path: "/calculator", label: "Salary Calculator" },
+  { path: "/payslip-generator", label: "Payslip Generator" },
+  { path: "/batch", label: "Batch Payslips" },
   { path: "/checker", label: "PF/ESI Checker" },
-  { path: "/templates", label: "Payslip Templates" },
+  { path: "/professional-tax", label: "Professional Tax" },
+  { path: "/templates", label: "Templates" },
 ];
 
 export default function ToolsNav() {

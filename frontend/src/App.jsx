@@ -20,6 +20,9 @@ import CalculatorPage from "./pages/CalculatorPage";
 import CheckerPage from "./pages/CheckerPage";
 import TemplatesPage from "./pages/TemplatesPage";
 import EmbedPage from "./pages/EmbedPage";
+import PayslipGeneratorPage from "./pages/PayslipGeneratorPage";
+import BatchPage from "./pages/BatchPage";
+import ProfessionalTaxPage from "./pages/ProfessionalTaxPage";
 import BlogLayout, { BlogIndex } from "./pages/BlogLayout";
 import SalaryStructureGuide from "./pages/blog/SalaryStructureGuide";
 import PfEsiComplianceGuide from "./pages/blog/PfEsiComplianceGuide";
@@ -51,7 +54,10 @@ export default function App() {
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/calculator" element={<CalculatorPage />} />
+      <Route path="/payslip-generator" element={<PayslipGeneratorPage />} />
+      <Route path="/batch" element={<BatchPage />} />
       <Route path="/checker" element={<CheckerPage />} />
+      <Route path="/professional-tax" element={<ProfessionalTaxPage />} />
       <Route path="/templates" element={<TemplatesPage />} />
       <Route path="/embed" element={<EmbedPage />} />
       <Route path="/blog" element={<BlogLayout />}>

@@ -685,3 +685,41 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--b
   .table { font-size: 0.8rem; }
   .table th, .table td { padding: 0.5rem; }
 }
+
+/* Payslip generator / batch / PT page styles */
+.calc-row { display: flex; gap: 1rem; }
+.calc-row > * { flex: 1; min-width: 0; }
+.calc-error { color: #ef4444; font-size: 0.875rem; margin: 0.5rem 0; }
+.calc-hint { font-size: 0.8rem; color: var(--landing-text-muted, #6B7280); margin: 0.25rem 0 0.75rem; }
+
+.template-selector { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.template-option { display: flex; flex-direction: column; gap: 2px; padding: 0.75rem 1rem; border: 2px solid var(--landing-border, #2A2A2D); border-radius: 8px; cursor: pointer; flex: 1; min-width: 120px; }
+.template-option input { display: none; }
+.template-option strong { font-size: 0.875rem; }
+.template-option span { font-size: 0.75rem; color: var(--landing-text-muted, #6B7280); }
+.template-option.active { border-color: var(--brand); background: rgba(240,180,41,0.08); }
+[data-theme="light"] .template-option { border-color: #E4E4E7; }
+[data-theme="light"] .template-option.active { background: rgba(240,180,41,0.12); }
+
+.month-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem; margin-bottom: 0.25rem; }
+.month-btn { padding: 0.5rem; border: 1px solid var(--landing-border, #2A2A2D); border-radius: 6px; background: transparent; color: inherit; cursor: pointer; font-size: 0.8rem; }
+.month-btn.active { background: var(--brand); color: #1a1a2e; border-color: var(--brand); font-weight: 600; }
+.month-btn:hover:not(.active) { border-color: var(--brand); }
+[data-theme="light"] .month-btn { border-color: #E4E4E7; }
+
+.state-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.state-btn { padding: 0.4rem 0.75rem; border: 1px solid var(--landing-border, #2A2A2D); border-radius: 6px; background: transparent; color: inherit; cursor: pointer; font-size: 0.8rem; }
+.state-btn.active { background: var(--brand); color: #1a1a2e; border-color: var(--brand); font-weight: 600; }
+.state-btn:hover:not(.active) { border-color: var(--brand); }
+[data-theme="light"] .state-btn { border-color: #E4E4E7; }
+
+.pt-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.875rem; }
+.pt-table th, .pt-table td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--landing-border, #2A2A2D); }
+.pt-table th { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; color: var(--landing-text-muted, #6B7280); }
+[data-theme="light"] .pt-table th, [data-theme="light"] .pt-table td { border-color: #E4E4E7; }
+
+@media (max-width: 600px) {
+  .calc-row { flex-direction: column; gap: 0; }
+  .month-grid { grid-template-columns: repeat(4, 1fr); }
+  .template-selector { flex-direction: column; }
+}

@@ -70,7 +70,7 @@ def create_app() -> FastAPI:
 
     register_exception_handlers(app)
 
-    from app.routers import auth, employees, health, leaves, payroll, reports
+    from app.routers import auth, employees, free_tools, health, leaves, payroll, reports
 
     app.include_router(health.router, prefix=s.api_v1_prefix, tags=["health"])
     app.include_router(auth.router, prefix=s.api_v1_prefix, tags=["auth"])
@@ -78,6 +78,7 @@ def create_app() -> FastAPI:
     app.include_router(payroll.router, prefix=s.api_v1_prefix, tags=["payroll"])
     app.include_router(leaves.router, prefix=s.api_v1_prefix, tags=["leaves"])
     app.include_router(reports.router, prefix=s.api_v1_prefix, tags=["reports"])
+    app.include_router(free_tools.router, prefix=s.api_v1_prefix, tags=["free-tools"])
 
     @app.get("/")
     async def _root():

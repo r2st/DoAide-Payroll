@@ -503,14 +503,32 @@ export default function LandingPage() {
               <strong>PF/ESI Checker</strong>
               <span>Check compliance requirements</span>
             </Link>
-            <Link to="/templates" className="landing-tool-card">
+            <Link to="/payslip-generator" className="landing-tool-card">
               <div className="landing-tool-icon">
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
               </div>
-              <strong>Payslip Templates</strong>
-              <span>6 professional formats</span>
+              <strong>Payslip Generator</strong>
+              <span>Free PDF salary slips</span>
+            </Link>
+            <Link to="/batch" className="landing-tool-card">
+              <div className="landing-tool-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="18" rx="2" /><line x1="2" y1="9" x2="22" y2="9" /><line x1="8" y1="3" x2="8" y2="21" />
+                </svg>
+              </div>
+              <strong>Batch Payslips</strong>
+              <span>Multiple months as ZIP</span>
+            </Link>
+            <Link to="/professional-tax" className="landing-tool-card">
+              <div className="landing-tool-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#F0B429" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </div>
+              <strong>Professional Tax</strong>
+              <span>State-wise PT rates</span>
             </Link>
           </div>
         </section>
@@ -531,9 +549,11 @@ export default function LandingPage() {
           <div className="landing-footer-col">
             <h4>Free Tools</h4>
             <Link to="/calculator">Salary Calculator</Link>
+            <Link to="/payslip-generator">Payslip Generator</Link>
+            <Link to="/batch">Batch Payslips</Link>
             <Link to="/checker">PF/ESI Checker</Link>
-            <Link to="/templates">Payslip Templates</Link>
-            <Link to="/embed">Embed Widget</Link>
+            <Link to="/professional-tax">Professional Tax</Link>
+            <Link to="/templates">Templates</Link>
           </div>
           <div className="landing-footer-col">
             <h4>Product</h4>
