@@ -27,6 +27,9 @@ import BlogLayout, { BlogIndex } from "./pages/BlogLayout";
 import SalaryStructureGuide from "./pages/blog/SalaryStructureGuide";
 import PfEsiComplianceGuide from "./pages/blog/PfEsiComplianceGuide";
 import PayslipFormatGuide from "./pages/blog/PayslipFormatGuide";
+import PayrollProcessingGuide from "./pages/blog/PayrollProcessingGuide";
+import EpfCalculationGuide from "./pages/blog/EpfCalculationGuide";
+import ProfessionalTaxGuide from "./pages/blog/ProfessionalTaxGuide";
 
 function Home() {
   const { user, loading } = useAuth();
@@ -65,6 +68,9 @@ export default function App() {
         <Route path="salary-structure-india-ctc-explained" element={<SalaryStructureGuide />} />
         <Route path="pf-esi-compliance-guide-2026" element={<PfEsiComplianceGuide />} />
         <Route path="payslip-format-india-what-to-include" element={<PayslipFormatGuide />} />
+        <Route path="payroll-processing-india-2026-guide" element={<PayrollProcessingGuide />} />
+        <Route path="epf-calculation-2026-employee-employer-contribution" element={<EpfCalculationGuide />} />
+        <Route path="professional-tax-rates-2026-state-wise-slab-chart" element={<ProfessionalTaxGuide />} />
       </Route>
       <Route path="/employees" element={<Protected><EmployeesPage /></Protected>} />
       <Route path="/employees/:id" element={<Protected><EmployeeDetailPage /></Protected>} />

@@ -16,6 +16,21 @@ const ARTICLES = [
     title: "What to Include in a Payslip — Indian Payslip Format Guide",
     description: "Legal requirements for payslips in India, mandatory components, and best practices for professional salary statements.",
   },
+  {
+    slug: "payroll-processing-india-2026-guide",
+    title: "Payroll Processing in India 2026: Complete Guide for HR Managers",
+    description: "Step-by-step guide covering Indian payroll processing — from salary structure and statutory deductions to compliance filings and automation tips.",
+  },
+  {
+    slug: "epf-calculation-2026-employee-employer-contribution",
+    title: "EPF Calculation 2026: Employee and Employer Contribution Explained",
+    description: "Learn how EPF contributions are calculated for both employee and employer in India — contribution rates, wage ceiling, EPS split, and monthly examples.",
+  },
+  {
+    slug: "professional-tax-rates-2026-state-wise-slab-chart",
+    title: "Professional Tax Rates 2026: State-wise Slab Chart",
+    description: "Complete state-wise Professional Tax slab chart for 2026 — monthly rates, annual limits, exemptions, and employer obligations.",
+  },
 ];
 
 export { ARTICLES };
